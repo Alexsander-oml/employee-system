@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizar empregados</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+<!-- Música de fundo Lo-fi -->
+    <audio autoplay loop>
+        <source src="https://www.youtube.com/watch?v=37lnWSpx0q8" type="audio/mpeg">
+        Seu navegador não suporta a reprodução de áudio.
+    </audio>
+
+
+    <section>
+        <a href="/">Adicionar empregado</a>
+        <form action="/show" method="get">
+            <label for="q">Pesquisar por nome:</label>
+            <input type="search" name="q" id="q" value="{{query}}">
+            <button type="submit">Pesquisar</button>
+        </form>
+        <table>
+            <tr>
+                <th>#</th>
+                <th>Nome</th>
+                <th>Salário bruto</th>
+                <th>Salário líquido</th>
+                <th>Departamento</th>
+                <th>Opções</th>
+            </tr>
+            {{#each results}}
+            <tr>
+                <td>{{id}}</td>
+                <td>{{nome}}</td>
+                <td>{{parseBRL salario_bruto}}</td>
+                <td>{{parseBRL salario_liquido}}</td>
+                <td>{{nomeDepartamento}}</td>
+                <td>
+                    <a href="/edit/{{id}}">Editar</a>
+                    <a href="/delete/{{id}}" onclick="return confirm('Deletar empregado?')">Deletar</a>
+                </td>
+            </tr>
+            {{/each}}
+        </table>
+    </section>
+</body>
+
+</html>
