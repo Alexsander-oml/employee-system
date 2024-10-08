@@ -1,0 +1,99 @@
+/* Modificação da fonte para um estilo mais sofisticado */
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #6a0572 0%, #c837ab 100%);
+    color: #ffffff;
+}
+
+/* Estilo de espaçamento mais suave */
+body > section > * + * {
+    margin-top: 1rem;
+}
+
+section {
+    background: #4e0f59;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+/* Efeito hover para seções */
+section:hover {
+    transform: translateY(-10px);
+}
+
+/* Ajustes no layout do formulário */
+form > section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+/* Tabela com bordas mais suaves e paleta moderna */
+table {
+    width: 100%;
+    background: #f0e1f6;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+table, th, td {
+    border: 1px solid #bdc3c7;
+    padding: 1.5rem;
+}
+
+th {
+    background: #6a0572;
+    color: #ffffff;
+}
+
+td {
+    background: #ffffff;
+    color: #4e0f59;
+}
+
+/* Estilo para inputs e botões com um visual clean */
+label, input, select, button, a {
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #bdc3c7;
+    background: #ffffff;
+    color: #4e0f59;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+input:focus, select:focus, button:focus, a:focus {
+    background: #c837ab;
+    color: #ffffff;
+    transform: scale(1.05);
+    outline: none;
+}
+
+/* Estilo dos links */
+a, a:visited {
+    color: #9b59b6;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #e74c3c;
+    text-decoration: underline;
+}
+
+/* Adiciona transições suaves */
+button:hover {
+    background: #9b59b6;
+    color: #ffffff;
+}
